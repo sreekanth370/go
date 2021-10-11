@@ -15,6 +15,17 @@ go:
   - 1.13.x
   - 1.12.x
   - 1.11.x
+  
+  # Disable GO version 1.12,1.13 &1.14
+jobs:
+  exclude:
+    - arch: ppc64le
+      go: 1.12
+    - arch: ppc64le
+      go: 1.13
+    - arch: ppc64le
+      go: 1.14
+
   # go testing suite support was introduced in go 1.7, thus tests will only compile for go 1.7+.
   # Once we introduce TB.Helper() support (introduced in go 1.9), then tests will only run from go 1.9+.
 install:
